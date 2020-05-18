@@ -1,5 +1,6 @@
 package app.thumbnailbookmark.ui
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -15,6 +16,7 @@ import app.videobookmarkuidemo.databinding.BookmarkBinding
 import app.videobookmarkuidemo.databinding.FolderBinding
 import app.videobookmarkuidemo.databinding.FragmentBookmarkListBinding
 import kotlinx.android.synthetic.main.fragment_bookmark_list.view.*
+import kotlinx.android.synthetic.main.insert.view.*
 import java.io.Serializable
 
 class BookmarkListFragment : Fragment() {
@@ -58,6 +60,7 @@ class BookmarkListFragment : Fragment() {
         binding.recyclerView.let {
             it.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             it.adapter = folderAdapter
+            it.addItemDecoration(BookmarkItemDecorator(resources.getDimensionPixelSize(R.dimen.movehere_height_half)))
         }
 
         return binding.root
@@ -179,8 +182,8 @@ class BookmarkListFragment : Fragment() {
                     }
                     binding.text.text = bookmark.title
                     binding.insert.insert.visibility =
-                        if (isSelectionMode) View.VISIBLE else View.GONE
-                    binding.insert.insert.setOnClickListener { onMoveHereClicked(position); }
+                        if (isSelectionMode) View.VISIBLE else View.INVISIBLE
+                    binding.insert.insert.insert.setOnClickListener { onMoveHereClicked(position); }
                 }
                 is BookmarkListAdapterUrlViewHolder -> {
                     val idx = getBookmarkIdx(position)
@@ -199,12 +202,12 @@ class BookmarkListFragment : Fragment() {
                     binding.text.text = bookmark.title
 
                     binding.insert.insert.visibility =
-                        if (isSelectionMode) View.VISIBLE else View.GONE
+                        if (isSelectionMode) View.VISIBLE else View.INVISIBLE
                     binding.insert.insert.setOnClickListener { onMoveHereClicked(position); }
                 }
                 is BookmarkListAdapterBottomPaddingViewHolder -> {
                     holder.moveHereButton.visibility =
-                        if (isSelectionMode) View.VISIBLE else View.GONE
+                        if (isSelectionMode) View.VISIBLE else View.INVISIBLE
                     holder.moveHereButton.setOnClickListener { onMoveHereClicked(position); }
                 }
             }
@@ -268,6 +271,22 @@ class BookmarkListFragment : Fragment() {
 
     }
 
+}
+
+class BookmarkItemDecorator(val offset: Int): RecyclerView.ItemDecoration() {
+    override fun getItemOffsets(
+        outRect: Rect,
+        view: View,
+        parent: RecyclerView,
+        state: RecyclerView.State
+    ) {
+        val position = parent.getChildAdapterPosition(view)
+        if (position == 0) {
+            outRect.set(0, 0, 0, 0)
+        } else {
+            outRect.set(0, -offset, 0, 0)
+        }
+    }
 }
 
 

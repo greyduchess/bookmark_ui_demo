@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="movehere_height">24sp</dimen>
+    <dimen name="movehere_height_half">12sp</dimen>
+
+</resources>

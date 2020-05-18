@@ -1,38 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
         android:id="@+id/insert"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#e0e0e0"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/movehere_height"
+        android:layout_gravity="right"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right|center_vertical"
-            android:orientation="horizontal"
-            android:paddingRight="16dip">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_arrow_back_black_24dp" />
+            <View
+                android:id="@+id/arrow"
+                android:layout_width="20dip"
+                android:layout_height="@dimen/movehere_height"
+                android:background="@drawable/ic_triangle"
+                android:backgroundTint="#e0e0e0"
+                android:translationX="0.2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="8dip"
-                android:maxLines="3"
+                android:layout_height="@dimen/movehere_height"
+                android:background="#e0e0e0"
+                android:gravity="center_vertical"
+                android:paddingLeft="8dip"
+                android:paddingRight="8dip"
                 android:text="move here"
+                android:textColor="#808080"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/arrow"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                android:textSize="14sp" />
-
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
-</layout>
+</FrameLayout>

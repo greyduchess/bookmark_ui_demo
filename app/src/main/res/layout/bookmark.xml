@@ -7,46 +7,51 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include
-            android:id="@+id/insert"
-            layout="@layout/insert" />
-
         <FrameLayout
-            android:id="@+id/foreground"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bookmark_background_notselected"
-            android:clickable="true"
-            android:elevation="5dp"
-            android:focusable="true"
-            android:minHeight="62dip"
-            android:foreground="?android:attr/selectableItemBackground">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_gravity="center_vertical"
+            <FrameLayout
+                android:id="@+id/foreground"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dip">
+                android:layout_marginTop="@dimen/movehere_height_half"
+                android:background="@drawable/bookmark_background_notselected"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:minHeight="62dip">
 
                 <LinearLayout
-                    android:layout_width="0px"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dip"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="8dip">
 
-                    <TextView
-                        android:id="@+id/text"
-                        android:layout_width="match_parent"
+                    <LinearLayout
+                        android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:maxLines="3"
-                        android:textSize="16sp"
-                        tools:text="bookmark name" />
+                        android:layout_marginLeft="8dip"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxLines="3"
+                            android:textSize="16sp"
+                            tools:text="bookmark name" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
+            </FrameLayout>
 
-            </LinearLayout>
+            <include
+                android:id="@+id/insert"
+                layout="@layout/insert" />
         </FrameLayout>
 
         <View
