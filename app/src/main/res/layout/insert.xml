@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <FrameLayout
-        android:id="@+id/insert"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/movehere_height"
-        android:layout_gravity="right"
-        android:clickable="true"
-        android:focusable="true"
-        android:foreground="?android:attr/selectableItemBackground">
+        <FrameLayout
+            android:id="@+id/insert"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/movehere_height"
+            android:layout_gravity="right"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <View
-                android:id="@+id/arrow"
-                android:layout_width="20dip"
-                android:layout_height="@dimen/movehere_height"
-                android:background="@drawable/ic_triangle"
-                android:backgroundTint="#e0e0e0"
-                android:translationX="0.2dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <View
+                    android:id="@+id/arrow"
+                    android:layout_width="20dip"
+                    android:layout_height="@dimen/movehere_height"
+                    android:background="@drawable/ic_triangle"
+                    android:backgroundTint="#e0e0e0"
+                    android:translationX="0.2dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/movehere_height"
-                android:background="#e0e0e0"
-                android:gravity="center_vertical"
-                android:paddingLeft="8dip"
-                android:paddingRight="8dip"
-                android:text="move here"
-                android:textColor="#808080"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                app:layout_constraintLeft_toRightOf="@+id/arrow"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/movehere_height"
+                    android:background="#e0e0e0"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="8dip"
+                    android:paddingRight="8dip"
+                    android:text="move here"
+                    android:textColor="#808080"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@+id/arrow"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
     </FrameLayout>
-</FrameLayout>
+</layout>

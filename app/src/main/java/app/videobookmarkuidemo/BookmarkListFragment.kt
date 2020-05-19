@@ -15,8 +15,6 @@ import app.videobookmarkuidemo.R
 import app.videobookmarkuidemo.databinding.BookmarkBinding
 import app.videobookmarkuidemo.databinding.FolderBinding
 import app.videobookmarkuidemo.databinding.FragmentBookmarkListBinding
-import kotlinx.android.synthetic.main.fragment_bookmark_list.view.*
-import kotlinx.android.synthetic.main.insert.view.*
 import java.io.Serializable
 
 class BookmarkListFragment : Fragment() {
@@ -183,7 +181,7 @@ class BookmarkListFragment : Fragment() {
                     binding.text.text = bookmark.title
                     binding.insert.insert.visibility =
                         if (isSelectionMode) View.VISIBLE else View.INVISIBLE
-                    binding.insert.insert.insert.setOnClickListener { onMoveHereClicked(position); }
+                    binding.insert.insert.setOnClickListener { onMoveHereClicked(position); }
                 }
                 is BookmarkListAdapterUrlViewHolder -> {
                     val idx = getBookmarkIdx(position)
