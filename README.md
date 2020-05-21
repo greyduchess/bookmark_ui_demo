@@ -45,7 +45,9 @@ Dropbox UI has exactly the same limitation as Files app UI.
 "move here" buttons in selection mode enables you easy and fast reordering. Drag & drop type reordering is cumbersome especially when moving long distance. 
 
 # Demo app
-	
+
+[<img src="screenshot/google-play-badge.png" width=200>](https://play.google.com/store/apps/details?id=app.bookmark.experiment)
+
 [Video Bookmark](https://play.google.com/store/apps/details?id=app.bookmark.experiment) uses a same UI as described here. 
 It's a bookmark manager with thumbnails. It also shows video preview thumbnails for many video sharing sites.
 
